@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "MainPage";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+<br />
+
+<div class="container1">
+    <h2 style="text-align:center;">خدمات الإدارة العامة لشؤون التنظيم</h2>
+    <div class=" icons">
+
+        <div class="col-md-2 col-sm-4 col-xs-6 col-md-offset-4 col-sm-offset-3">
+            <div>
+                @*<a><img src="~/images/collaboration.png" class="img-rounded img-thumbnail"></a>*@
+
+                <a href="~/Home/Index">
+                    <img src="~/images/add se.jpg" class="img-rounded img-responsive">
+                </a>
+
+                <p>
+                    @Html.ActionLink("الاستعلام عن أرقام الخدمات المضافة", "Index", "Home")
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+            <div>
+
+                <a href="~/Equipment/Equip1">
+                    <img src="~/images/1234 .jpg" class="img-rounded img-responsive">
+                </a>
+
+                <p>
+                    @Html.ActionLink("الاستعلام عن الأجهزة والمعدات المعتمدة نوعياَ", "Equip1", "Equipment")
+                </p>
+            </div>
+        </div>
+       </div>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>

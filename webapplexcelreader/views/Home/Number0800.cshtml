@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebApplExcelReader.Models.PhoneNumbers>
+@using WebApplExcelReader.Models;
+@{
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+<!-- fontawesome -->
+<link href="~/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+<script src="~/Content/fontawesome/fontawesome-free-5.0.9/svg-with-js/js/fontawesome-all.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <br /><br />
+            <div class="well" style="box-shadow: 5px 5px; color:#b1b1b7 ">
+                <h3 style="text-align:center;color:#337ab7;direction:ltr;"><strong>(0800-xxx xxx) الاستعلام عن الأرقام </strong></h3>
+                <br />
+                <table class="table table-striped">
+                    <tr>
+                        @using (Html.BeginForm("Number0800", "Home", FormMethod.Get))
+
+            {
+
+                            <th>
+                                @Html.TextBox("number0800", null, new
+                           {
+                               @placeholder = "ادخل الخانات" + " السته المطلوبة " + "(xxx xxx)",
+                               @id = "roll-input",
+                               @onkeypress = "return event.keyCode != 13;",
+                               @onkeydown = "return ValidateNumber(event);",
+                               @onpaste = "return false;",
+                               @ondrop = "return false;",
+                               @pattern = "\\d{6}",
+                               @required = "",
+                               @class = "form-control",
+                               @maxlength = "6",
+                               @minlength = "6"
+                           })
+                            </th>
+                            <th>
+                                <button id="mod1" class="btn btn-default" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </th>
+
+                            <th>
+                                <h4 style="color:#000000;">0800</h4>
+
+                        @*<input id="mod1" class="btn btn-success" type="submit" value="بحث" style="padding-right:20px;color:white ;font-size:20px; float:right;" required="" aria-required="true" />*@
+                            </th>
+
+                        }
+                    </tr>
+
+                    @{
+
+                        if (ViewBag.number0800 == null || ViewBag.number0800 == "")
+                        {
+
+                            <tr>
+                                <td id="nullVal" style="color:#337ab7;"><h2>يرجي إدخال باقي الخانات المطلوبة </h2></td>
+                            </tr>
+                        }
+
+                        else if (Model.Count() == 0 && ViewBag.number0800 != null)
+                        {
+                            ViewBag.number0800 = "0800" + ViewBag.number0800;
+
+                            {
+
+                                ViewBag.price = "سعره  " + "150";
+
+                            }
+
+                            <tr>
+
+                                <td colspan="4">
+
+                                    <h4 style="color:green;font-size:25px"> الرقم @ViewBag.number0800 مُتاح <hr />   @ViewBag.price  دينار سنوياً.</h4>
+                                </td>
+                            </tr>
+
+                        }
+
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+
+                                        <h4 style="color:red;font-size:25px">   الرقم @Html.DisplayFor(modelItem => item.Number800xxxxxx) مُخصص.</h4>
+                                </tr>
+                            }
+                        }
+                    }
+                </table>
+            </div>
+            @*<div class="col-md-4">
+                <div class="well">
+                    <p>لأي استفسار نأمل التواصل على البريد الالكتروني التالي </p>
+                    <a href="mailto: reg@cim.gov.ly"><h3>reg@cim.gov.ly</h3></a>
+                </div>
+            </div>*@
+            <div class="col-md-6">
+                <div class="well" style="padding-top:70px;">
+
+                    <a href="~/files/0800.pdf" target="_blank"><h3>قائمة بأسعار الخدمة </h3></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="well" style="padding-top:90px;">
+                    @Html.ActionLink("تعبئة النمودج وطباعته", "Services0800", "Home", new { @style = "font-size:25px;" })
+                </div>
+            </div>
+        </div>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary " style="float:left;">
+            <i class="fa fa-angle-double-left fa-2x"></i>
+        </a>
+       @* @Html.ActionLink("رجوع", "Index", "Home", new { @class = "btn btn-primary", @style = "padding-right:25px;color:white ;font-size:20px; float:left;" })*@
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#roll-input").val("");
+
+    });
+</script>

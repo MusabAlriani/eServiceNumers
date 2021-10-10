@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/JavaScript.js"></script>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+
+    <div class="navbar navbar-default">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="#" class="navbar-brand">اسم البرنامج</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">الرئيسية</a> </li>
+                <li><a href="#">حولة</a> </li>
+                <li><a href="#">اتصل بنا</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="Register.html">التسجيل </a></li>
+                <li><a href="Login.html">تسجيل الدخول</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align:center">الاستعلام عن ارقام الخدمات المضافة</h2>
+        <br />
+        <div class="row">
+
+            <div class="col--4">
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="heading6">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                    <div class="panel panel-info" id="panel1">
+                                        <i class="fa fa-sort-numeric-desc" aria-hidden="true" style="">&copy; الترقيم والخدمات المضافة</i>
+                                    </div>
+                                </a>
+                            </h5>
+                        </div>
+
+                        <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul>
+
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="heading7">
+                                            <h5 class="mb-0">
+                                                <a data-toggle="collapse" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                                    <div class="panel panel-info" id="PanelInfo">
+                                                        <i class="fa fa-sort-numeric-desc" aria-hidden="false">
+
+                                                            ارقام الرسائل النصية القصيرة
+                                                        </i>
+                                                    </div>
+                                                </a>
+                                            </h5>
+                                        </div>
+
+                                        <div id="collapse7" class="collapse" role="tabpanel" aria-labelledby="heading7" data-parent="#accordion">
+                                            <div class="card-body">
+
+                                                <form>
+
+                                                    <div class="row">
+                                                        <div class="col-md-4 mb-4">
+                                                            <label for="validationServer01">ادخل الرقم المراد الإستعلام عنه</label>                                    <input type="text" class="form-control" id="validationServer01" maxlength="5" placeholder="ادخل الرقم" onkeydown="return ValidateNumber(event);" required>
+                                                            <br>
+                                                            <div class="invalid-feedback">
+                                                                <input type="button" class="btn btn-primary" value="البحث" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <br>
+                                                    <div id="myModal" class="modal fade">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                    <h4 class="modal-title">تنبيه</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>الرقم 55555 غير متاح</p>
+                                                                    <!--<p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>-->
+                                                                </div>
+                                                                <!--<div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                                </div>-->
+                                                                <div class="modal-body">
+                                                                    <p>الرقم 111111  متاح</p>
+                                                                    <!--<p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="heading8">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                                    <div class="panel panel-info" id="PanelInfo">
+                                                        <i class="fa fa-sort-numeric-desc" aria-hidden="false">  الأرقام القصيرة المجانية (14XX)</i>
+                                                    </div>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse8" class="collapse" role="tabpanel" aria-labelledby="heading8" data-parent="#accordion">
+                                            <div class="card-body">
+
+                                                <p>
+                                                    <a href="RequestAssigningFreeNumbers.html">اضغط هنا</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="heading9">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                                    <div class="panel panel-info" id="PanelInfo">
+                                                        <i class="fa fa-sort-numeric-desc" aria-hidden="false"> الأرقام القصيرة الغير مجانية (15XX)</i>
+                                                    </div>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse9" class="collapse" role="tabpanel" aria-labelledby="heading9" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <p>
+                                                    <a href="RequestAssigningFreeNumbersDomain15.html">اضغط هنا</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="heading10">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                                                    <div class="panel panel-info" id="PanelInfo">
+                                                        <i class="fa fa-sort-numeric-desc" aria-hidden="false"> الأرقام المجانية (0800XXXXXXXX)</i>
+                                                    </div>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <p>
+                                                    <a href="assigningFreeNumber0800Domain.html">اضغط هنا</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="heading11">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                                                    <div class="panel panel-info" id="PanelInfo">
+                                                        <i class="fa fa-sort-numeric-desc" aria-hidden="false"> الأرقام المميزة (0900XXXXXXXX)</i>
+                                                    </div>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <p>
+                                                    l<a href="assigningUniqueNumber0900Domain.html">اضغط هنا</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <p id="copy"> 2017 &copy;   | الخدمات الإلكترونية   </p>
+    </div>
+
+    <div class="modal fade" id="contact" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-contact">
+                <div class="modal-header">
+                    <h4>تواصل معنا</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn btn-danger" data-dismiss="modal">close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

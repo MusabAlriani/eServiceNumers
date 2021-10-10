@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "MainFirst";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+<br />
+
+<div class="container1">
+    <div class=" icons">
+
+        <div class="col-md-2 col-sm-2 col-sm-offset-4 col-md-offset-4">
+                <div>
+
+                    <a href="~/Home/MainPage">
+                        <img src="~/images/reg.jpg" class="img-rounded img-responsive ">
+                    </a>
+                    <p>
+                        @Html.ActionLink("خدمات شؤون التنظيم", "MainPage", "Home")
+                    </p>
+
+                </div>
+            </div>
+
+        <div class="col-md-2 col-sm-2">
+        <div>
+
+            <a href="~/Home/service">
+                <img src="~/images/abcd.jpg" class="img-rounded img-responsive" style="padding-top:35px;">
+            </a>
+            <p>
+                @Html.ActionLink("دليل إجراءات العمل للهيئة العامة للاتصالات والمعلوماتية", "service", "Home")
+            </p>
+
+        </div>
+    </div>
+</div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>

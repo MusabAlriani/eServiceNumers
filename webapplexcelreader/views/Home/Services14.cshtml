@@ -1,0 +1,554 @@
+﻿@{
+    ViewBag.Title = "Services14";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+
+@*###############################################################*@
+<div id="content">
+    <h2 style="text-align:center"> طلب تخصيص الأرقام القصيرة المجانية في النطاق 14</h2>
+
+    <div class="col-md-8 col-lg-offset-2">
+        <div class="jumbotron">
+            <div class="container ">
+
+                <div class="form-group row">
+
+                    <h3 style="font-weight:bold ;text-align:center ">معلومات  عن مقدم الطلب</h3>
+
+                    <div class="col-md-5 col-xs-5 col-md-offset-1 col-xs-offset-1">
+                        <label for="usr">اسم الشركة</label>
+                        <input type="text" class="form-control" id="usr" placeholder="أدخل اسم الشركة">
+                    </div>
+
+                    <div class="col-md-5 col-xs-5">
+                        <label for="usr">الشكل القانوني</label>
+                        <input type="text" class="form-control" id="usr" placeholder="أدخل الشكل القانوني">
+                    </div>
+
+                    <div class="col-md-5 col-xs-5 col-md-offset-1 col-xs-offset-1">
+                        <label for="usr">تاريخ التسجيل</label>
+                        <input type="date" class="form-control" id="usr" placeholder="أدخل تاريخ التسجيل">
+                    </div>
+                    <div class="col-md-5 col-xs-5">
+                        <label for="usr">رقم التسجيل</label>
+                        <input type="text" class="form-control" id="usr" placeholder="أدخل رقم التسجيل">
+                    </div>
+                </div>
+
+                @*########################################################*@
+                <div class="form-group row">
+                    <hr />
+                    <h3 style="font-weight:bold;text-align:center ">الممثل القانوني</h3>
+                    <div class="col-md-9 col-xs-6 col-md-offset-1 col-xs-offset-2">
+
+                        <label for="usr" class="col-md-3 col-form-label">الاسم ثلاثي </label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل الاسم ">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">اللقب</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل اللقب">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">المنصب</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل المنصب">
+                        </div>
+
+                        @*##################################*@
+                        <div class="col-md-12"></div>
+                        <br /><br />
+                        <label for="usr" class="col-md-2 col-form-label ">المدينة</label>
+                        <div class="col-md-2 col-md-offset-1">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل المدينة">
+                        </div>
+                        <label for="usr" class="col-md-1 col-form-label">المنطقة</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل المنطقة">
+                        </div>
+                        <label for="usr" class="col-md-1 col-form-label">الشارع</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="usr" placeholder=" أدخل الشارع ">
+                        </div>
+
+                        @*#################################################*@
+
+                        <label for="usr" class="col-md-3 col-form-label">البريد المصور</label>
+                        <div class="col-md-8">
+
+                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control"
+                                   placeholder="أدخل البريد المصور " style="white-space: normal;" maxlength="10" pattern="\d{10}" required />
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">صندوق البريد</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder=" أدخل صندوق البريد ">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">الهاتف </label>
+                        <div class="col-md-8">
+                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control"
+                                   placeholder="أدخل رقم الهاتف" style="white-space: normal;" maxlength="10" pattern="\d{10}" required />
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">البريد الإلكتروني</label>
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" id="usr" placeholder="أدخل البريد الإلكتروني">
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                @*##############################################################*@
+                <div class="form-group row">
+
+                    <h3 style="font-weight:bold;text-align:center">معلومات أخري</h3>
+                    <div class="col-md-11 col-xs-6 col-md-offset-1 col-xs-offset-2">
+                        <label for="usr" class="col-md-3 col-form-label col-md-offset-1">نوع الترخيص</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل نوع الترخيص">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label col-md-offset-1">رقم الترخيص</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل رقم الترخيص">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label col-md-offset-1">تاريخ إنتهاء صلاحية الترخيص</label>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control" id="usr" placeholder="أدخل نوع الترخيص">
+                        </div>
+                    </div>
+                    </div>
+                <hr />
+                @*#######################عنوان مقدم الطلب######################333*@
+                <div class="form-group row">
+                    <h3 style="font-weight:bold;text-align:center ">عنوان مقدم الطلب</h3>
+                    <div class="col-md-9 col-xs-6 col-md-offset-1 col-xs-offset-2">
+
+                            <label for="usr" class="col-md-2 col-form-label ">المدينة</label>
+                            <div class="col-md-2 col-md-offset-1">
+                                <input type="text" class="form-control" id="usr" placeholder="أدخل المدينة">
+                            </div>
+                            <label for="usr" class="col-md-1 col-form-label">المنطقة</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="usr" placeholder="أدخل المنطقة">
+                            </div>
+                            <label for="usr" class="col-md-1 col-form-label">الشارع</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="usr" placeholder=" أدخل الشارع ">
+                            </div>
+
+                            @*###############################3*@
+
+                            <div class="col-md-12"></div>
+                            <label for="usr" class="col-md-3 col-form-label">البريد المصور</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="usr" placeholder="أدخل البريد المصور">
+                            </div>
+                            <div class="col-md-12"></div>
+                            <label for="usr" class="col-md-3 col-form-label">صندوق البريد</label>
+                            <div class="col-md-8">
+                                <input type="text" onkeypress="return ValidateNumber(event)" class="form-control"
+                                       placeholder="أدخل البريد المصور " style="white-space: normal;" maxlength="10" pattern="\d{10}" required />
+                            </div>
+                            <div class="col-md-12"></div>
+                            <label for="usr" class="col-md-3 col-form-label">الهاتف </label>
+                            <div class="col-md-8">
+                                <input type="text" onkeypress="return ValidateNumber(event)" class="form-control"
+                                       placeholder="أدخل رقم الهاتف " style="white-space: normal;" maxlength="10" pattern="\d{10}" required />
+                            </div>
+                            <div class="col-md-12"></div>
+                            <label for="usr" class="col-md-3 col-form-label">البريد الإلكتروني</label>
+                            <div class="col-md-8">
+                                <input type="email" class="form-control" id="usr" placeholder="أدخل البريد الإلكتروني">
+                            </div>
+                        </div>
+                    </div>
+
+                <hr />
+                @*######################################################*@
+                <div class="form-group row">
+                    <h3 style="font-weight:bold;text-align:center ">ضابط الاتصال وعنوانه (إذا كان مختلفا عن أعلاه)</h3>
+                    <div class="col-md-9 col-xs-6 col-md-offset-1 col-xs-offset-2">
+
+                        <label for="usr" class="col-md-3 col-form-label">إلاسم </label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل الاسم ">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">اللقب</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل اللقب">
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">المنصب</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل المنصب">
+                        </div>
+
+                        @*##################################*@
+                        <div class="col-md-12"></div>
+
+                        <label for="usr" class="col-md-2 col-form-label ">المدينة</label>
+                        <div class="col-md-2 col-md-offset-1">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل المدينة">
+                        </div>
+                        <label for="usr" class="col-md-1 col-form-label">المنطقة</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="usr" placeholder="أدخل المنطقة">
+                        </div>
+                        <label for="usr" class="col-md-1 col-form-label">الشارع</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="usr" placeholder=" أدخل الشارع ">
+                        </div>
+
+                        @*#################################################*@
+
+                        <label for="usr" class="col-md-3 col-form-label">البريد المصور</label>
+                        <div class="col-md-8">
+                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control"
+                                   placeholder="أدخل البريد المصور " style="white-space: normal;" maxlength="10" pattern="\d{10}" required />
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">صندوق البريد</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="usr" placeholder=" أدخل صندوق البريد ">
+                        </div>
+                        <div class="col-md-12"></div><br />
+                        <label for="usr" class="col-md-3 col-form-label">الهاتف </label>
+                        <div class="col-md-8">
+                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control"
+                                   placeholder="أدخل رقم الهاتف " style="white-space: normal;" maxlength="10" pattern="\d{10}" required />
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label">البريد الإلكتروني</label>
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" id="usr" placeholder="أدخل البريد الإلكتروني">
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                @*####################################################*@
+
+                @*##############################################################*@
+                <div class="form-group row">
+                    <div class="col-md-10 col-xs-7 col-md-offset-1 col-xs-offset-2">
+                        <h3 style="font-weight:bold;text-align:center">الرقم المطلوب (أرقام فقط)</h3>
+
+                        <label for="usr" class="col-md-3 col-form-label col-md-offset-1">الاختيار الأول</label>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="dis">
+                                <table>
+                                    <tr>
+                                        <td width="30px">
+                                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control" style="width:40px;word-wrap:break-word;
+                              white-space: normal;" maxlength="2" pattern="\d{2}" required />
+                                        </td>
+                                        <td width="30px">
+                                            <input type="text" class="form-control" style="width:40px;word-wrap:break-word;
+                                            white-space: normal;" maxlength="2" value=14 readonly disabled>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label col-md-offset-1">الاختيار الثاني</label>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="dis">
+                                <table>
+                                    <tr>
+                                        <td width="30px">
+                                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control" style="width:40px;word-wrap:break-word;
+                              white-space: normal;" maxlength="2" pattern="\d{2}" required />
+                                        </td>
+                                        <td width="30px">
+                                            <input type="text" class="form-control" style="width:40px;word-wrap:break-word;
+                                            white-space: normal;" maxlength="2" value=14 readonly disabled>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12"></div>
+                        <label for="usr" class="col-md-3 col-form-label col-md-offset-1">الاختيارالثالث</label>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="dis">
+                                <table>
+                                    <tr>
+                                        <td width="30px">
+                                            <input type="text" onkeypress="return ValidateNumber(event)" class="form-control" style="width:40px;word-wrap:break-word;
+                              white-space: normal;" maxlength="2" pattern="\d{2}" required />
+                                        </td>
+
+                                        <td width="30px">
+                                            <input type="text" class="form-control" style="width:40px;word-wrap:break-word;
+                                            white-space: normal;" maxlength="2" value=14 readonly disabled>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12"></div>
+                        <div class="col-md-12"></div>
+                        <div class="form-check form-check-inline">
+                            <div class="col-md-3 col-md-offset-1">
+                                <label>تشغيل الرقم معا</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1"> هاتف ليبيا
+                                </label>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"> المدار الجديد
+                                </label>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"> ليبيانا للهاتف المحمول
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                @*#################################################################*@
+                <div class="form-group row">
+                    <h4 style="text-align:center;font-weight:bold">وصف الخدمة المراد تقديمها</h4>
+                    <div class="col-md-7 col-xs-8 col-md-offset-3 col-xs-offset-2 ">
+                        <textarea class="form-control" rows="4" id="comment"></textarea>
+                    </div>
+                </div>
+                <hr />
+                @*#################################################################33*@
+
+                @*<div class="form-group row">
+
+                    <h3 style="font-weight:bold ;text-align:center ">التعرفة بالنسبة للمستفيد</h3>
+
+                    <div class="col-md-5 col-md-offset-1">
+                        <label for="usr">تكلفة الدقيقة</label>
+                        <table>
+                            <tr>
+                                <td width="30px">
+                                    <input type="number" onkeypress="return ValidateNumber(event)" class="form-control" style="width:340px;word-wrap:break-word;
+                              white-space: normal;" required />
+                                </td>
+                                <td width="30px">
+                                    <input type="text" class="form-control" style="width:50px;word-wrap:break-word;
+                                            white-space: normal;" maxlength="4" value=درهم readonly disabled>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label for="usr">تكلفة المكالمة</label>
+                        <table>
+                            <tr>
+                                <td width="30px">
+                                    <input type="number" onkeypress="return ValidateNumber(event)" class="form-control" style="width:340px;word-wrap:break-word;
+                              white-space: normal;" />
+                                </td>
+                                <td width="30px">
+                                    <input type="text" class="form-control" style="width:50px;word-wrap:break-word;
+                                            white-space: normal;" maxlength="4" value=درهم readonly disabled>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>*@
+                @*<hr /><br />*@
+                <div class="form-group row">
+                    <h3 style="font-weight:bold ;text-align:center ">تاريخ تقديم الخدمة</h3>
+                    <div class="col-md-5 col-md-offset-1">
+                        <label for="usr">تاريخ التفعيل</label>
+                        <input type="date" class="form-control" id="usr" placeholder="أدخل تاريخ التسجيل">
+                    </div>
+                    <div class="col-md-5 ">
+                        <label for="usr">تاريخ انتهاء التفعيل</label>
+                        <input type="date" class="form-control" id="usr" placeholder="أدخل تاريخ التسجيل">
+                    </div>
+                </div>
+                    @*################################################################*@
+                    @*############################ملاحظات##########################*@
+                    <div class="form-group row">
+                        <h4 for="comment" style="text-align:center;font-weight:bold">ملاحظات</h4>
+                        <div class="col-md-7 col-xs-8 col-md-offset-3 col-xs-offset-2 ">
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                    </div>
+                    @*######################################################################*@
+                    <div class="form-group row">
+                        <h4 for="comment" style="text-align:center;font-weight:bold">الإقرار والتوقيع</h4>
+                        <div class="col-md-12 col-xs-12 ">
+                            <div class="well">
+                                أقر أن المعلومات الواردة في الطلب حقيقة وصحيحة، وأقر بأنني علي علم بالقوانين واللوائح ذات العلاقة وألتزم بإتباعها . <br />
+                                أؤكد أن الرقم المطلوب ينتمي لأرقام الخدمات التي أنوي تقديمها.<br />
+                                أنا علي علم بأنه غير مسموح باستعمال الرقم في الخدمات الغير وارده في الطلب.<br />
+                                كما ألتزم بالاتي:<br />
+                                <ul>
+                                    <li>بأن محتوى الخدمات التي أقدمها لا يتنافى مع ديننا الإسلامي وأخلاقيات المجتمع الليبي.</li>
+                                    <li>أتحمل كامل المسؤولية (جنائيا ومدنيا) عن أية أضرار مادية أو معنوية قد تلحق بأي طرف من وراء الخدمة التي أقدمها محليا ودوليا.</li>
+                                    <li>عدم التنازل عن أي رقم من الأرقام المخصصة لي لصالح طرف ثالث بأي شكل من الأشكال</li>
+                                </ul>
+                            </div>
+
+                            <h4 style="font-weight:bold;text-align:center">اعتماد مقدم الطلب</h4>
+                            <div class="col-md-6 col-xs-6">
+                                <label>الاسم</label>
+
+                                <input type="text" class="form-control" placeholder="أدخل الاسم">
+
+                                <label>المنصب</label>
+
+                                <input type="text" class="form-control" placeholder="أدخل المنصب">
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <label>الاعتماد</label>
+                                <div class="well" style="background-color:white;height:120px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+
+                    @*############################################################################*@
+                    @*تعبي من قبل الاداره*@
+
+                    <div class="col-md-12 col-xs-12">
+
+                        <h4 style="font-weight:bold;text-align:center">تعبأ من قبل الإدارة</h4>
+
+                        <div class="well" style="background-color:white;height:200px">
+                          أسباب الرفض:
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="col-md-12 col-xs-12">
+
+                        <div class="well" style="background-color:white">
+                            الرقم المخصص/ المحجوز:(الرمز+رقمين)<br />
+                            <div class="dis">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" style="width:10px" />
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" style="width:10px" />
+                                        </td>
+
+                                        <td>
+                                            <input type="text" class="form-control" style="width:40px;word-wrap:break-word;
+                                            white-space: normal;" maxlength="4" value=14 readonly disabled>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12">
+
+                        <div class="well" style="background-color:white;height:200px">
+                            ملاحظات :
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <h4 style="font-weight:bold;text-align:center">اعتماد الإدارة</h4>
+                        <div class="col-md-6 col-xs-6">
+                            <label>الاسم</label>
+
+                            <input type="text" class="form-control">
+
+                            <label>المسمى الوظيفي</label>
+
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <label>الاعتماد</label>
+                            <div class="well" style="background-color:white;height:120px">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr /><br /><br /><br /><br /><br /><br /><br />
+                    @*######################################################################*@
+                    <div class="col-md-12" style="direction: rtl;">
+                        <h2>ملاحظات عن كيفية تعبئة طلب تخصيص أو حجز ارقام لخدمة الارقام المميزة.</h2>
+                        <h2>معلومات عامة:</h2>
+                        <p>1-إذا لم يتسنى لطالب الخدمة طباعة الطلب عن طريق الطابعة يجب ان يكتب الطلب بالحبر الاسود وبخط واضح.</p>
+                        <p>2-بإمكان المتقدمين للحصول علي الخدمة استعمال النماذج المعدة لذلك والموجودة علي موقع الهيئة العامة للاتصالات والمعلوماتية علي شبكة الانترنت أو استلامها يدويا من الادارة.</p>
+                        <p>3-لطلبات الغير مكتملة أو غير موقعة أو المقدمة من اشخاص من خارج ليبيا والتي لا تحتوي علي اسم شخص مخول يحمل عنوان في ليبيا فإنها لا تؤخذ في الاعتبار.</p>
+                        <p>4-إذا تم ارسال اكثر من طلب عن طريق الفاكس يجب ان يراعي ارسال كل طلب علي حدة مرفق بالمستندات المطلوبة. كذلك إذا تم ارسال الطلب عن طريق البريد الالكتروني يمكن ارسال المستندات عن طريق الفاكس أو البريد الالكتروني أو تسليمها باليد على ان يراعى ارسال كل طلب على حدة مرفقا بالمستندات المطلوبة.</p>
+                        <h2>كيفية تعبئة النموذج:</h2>
+                        <h2>فقرة 1:نوع الطلب</h2>
+                        <p>ضع علامة صح في المربع امام نوع الطلب <span>(تخصيص-تمديد التخصيص)</span></p>
+                        <h2>فقرة 2:معلومات عن المتقدم بالطلب</h2>
+                        <h3>الشركة:</h3>
+                        <p>إذا لم تكن شخص المالك وكنت الممثل القانوني للشركة. عليك كتابة اسم الشركة ورقم التسجيل والتاريخ بالنموذج كما هو وارد بالسجل التجاري للشركة.</p>
+                        <p>ويجب دائما ابداء الشكل القانوني للشركة.</p>
+                        <p> إذا كنت تنوي تقديم طلب لجهة قانونية أو تشاركية أو إذا كان هذا هو الطلب الأول لك يجب أن تدعم الطلب بوثائق تظهر الاسم والهوية والمقر الرئيسي.</p>
+                        <h3>الشخص الطبيعي:</h3>
+                        <P>لو كنت شخصا طبيعيا قم بإدخال تاريخ الميلاد والاسم واللقب. يجب احضار الوثائق الشخصية لدعم هذه البيانات مثل شهادة الميلاد أو جواز السفر.</P>
+                        <h3>الممثل القانوني:</h3>
+                        <p>في حالة الشركات يجب إدراج اسماء الممثلين القانونين. وفي حالة التشاركيات يجب تسجيل جميع الشركاء. يمكن إدراج الي حد ثلاثة ممثلين قانونين مخولين لطب ارقام.</p>
+                        <p>الفقرات الفرعية المتعلقة بالممثلين القانونين يتم ملؤها في الحالات التالية:</p>
+                        <p>*الطلب الاول باستعمال رقم نموذج الطلب أو غيره</p>
+                        <p>*اي طلب لاحق باستعمال هذا النموذج أو غيره لو تم تغيير بعض البيانات من النموذج الاخير</p>
+                        <h3>معلومات اخري:</h3>
+                        <p>حدد الرقم المرجعي لو كان هذا الرقم تم تحديده في السابق من قبل الإدارة .</p>
+                        <p>قم بإدراج جميع البيانات المتعلقة بالترخيص: نوع الترخيص ورقمه وتاريخ بداية ونهاية الصلاحية.</p>
+                        <h2>فقرة 3: عنوان المتقدم بالطلب.</h2>
+                        <h3>عنوان المتقدم بالطلب:</h3>
+                        <h3>ضابط الاتصال وعنوانه:</h3>
+                        <p>الرجاء إدراج اسم ولقب ضابط الاتصال. قم بإدراج اسم الشارع ورقم صندوق البريد والمدينة إذا كان يختلف عن عنوان المتقدم بالطلب. الرجاء إدراج ورقم الهاتف ورقم الفاكس وعنوان البريد الالكتروني.</p>
+                        <h3>عنوان الفوترة:</h3>
+                        <p>الرجاء إدراج البيانات الكاملة الخاصة بعنوان الفوترة والتي تشمل اسم الشركة والإدارة المختصة داخل الشركة أو اسم الشخص المخول باستلام الفواتير واسم الشارع والمدينة ورقم المنزل ورقم صندوق البريد. الاشخاص الطبعيين غير مسموح لهم بإدراج ارقام صناديق البريد. الرجاء إدراج رقم الهاتف ورقم الفاكس وعنوان البريد الالكتروني.</p>
+                        <h2>فقرة 4: الرقم المطلوب ارقام فقط.</h2>
+                        <h4>يطلب تحديد نطاق الرقم المطلوب <span>(15)</span> </h4>
+                        <p>عند طلبك لرقم معين حدد الخيار الاول للرقم ورقميين اخريين احتياطي . كل رقم يجب أن يتكون من 4 ارقام.</p>
+                        <h2>فقرة 5: معلومات تقنية:</h2>
+                        <h4>وصف للخدمة المزمع تقديمها:</h4>
+                        <p>حدد اسم الخدمة المطلوبة ونبذة بسيطة عنها.</p>
+                        <h5>التعرفة بالنسبة للمستفيد</h5>
+                        <p>يتم تحديد تكلفة المكالمة بالاتفاق مع المشغل </p>
+                        <h4>التواريخ:</h4>
+                        <p>التاريخ الفعلي : إذا لم يحدد التاريخ فان تاريخ تفعيل الخدمة يكون في اقرب فرصة . في حالة التمديد أو الحجز فان التاريخ الفعلي يبدا بمجرد نهاية التاريخ السابق.</p>
+                        <p>تاريخ انهاء الخدمة : إذا لم يتم تحديد موعد انهاء الخدمة فان نهاية الخدمة تعتبر مفتوحة.</p>
+                        <p>تاريخ التفعيل : حدد التاريخ الذي من المخطط ان تبدا فيه الخدمة.</p>
+                        <h2>فقرة 6: ملاحظات</h2>
+                        <p>تعتبر هذه الخدمة اختيارية. المتقدم يمكن ان يدون اي ملاحظات يري انها ذات علاقة بطلب القديم.</p>
+                        <h2>فقرة 7: الاقرار والتوقيع</h2>
+                        <p>هذه الفقرة يجب ان تعبأ بإكمال من قبل المتقدم.</p>
+                        <p>يعتبر هذا الطلب نافذ في حال تم توقيعه من قبل شخص مخول متفق عليه مسبق.</p>
+                        <p>الشخص الموقع يجب ان يكون الممثلين القانونين أو الشخص الطبيعي كما هوا محدد في الفقرة 2.</p>
+                        <h2>فقرة 8: محجوزة الإدارة </h2>
+                        <p>هذه الفقرة لا يمكن تعبئها من قبل المتقدم</p>
+                        <h2>فقرة 9:</h2>
+                        <h4>اي كشط أو تغيير في هذا النموذج يلغيه</h4>
+                    </div>
+                    @*######################################################################*@
+                </div>
+            @*####################contaner#######################################33*@
+
+            <br />
+            <div class="col-md-6 col-md-offset-1">
+
+                <button type="button" class="btn btn-success hidden-print" onclick="myFunction()">طباعة الصفحة</button>
+
+                <script>
+                            function myFunction() {
+                                window.print();
+                            };
+                </script>
+            </div>
+        </div>
+        <br /><br /><br />
+    </div>
+</div>

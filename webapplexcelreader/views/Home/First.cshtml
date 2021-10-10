@@ -1,0 +1,156 @@
+﻿@model IEnumerable<WebApplExcelReader.Models.PhoneNumbers>
+@using WebApplExcelReader.Models;
+@{
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+<!-- fontawesome -->
+<link href="~/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+<script src="~/Content/fontawesome/fontawesome-free-5.0.9/svg-with-js/js/fontawesome-all.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br /><br />
+            <div class="well" style="box-shadow: 5px 5px; color:#b1b1b7 ">
+                <h3 style="text-align:center;color:#337ab7"><strong> الاستعلام عن رقم (SMS)</strong></h3>
+                <br />
+
+                <table class="table table-striped">
+
+                    <tr class="input-group-prepend">
+                        @using (Html.BeginForm("First", "Home", FormMethod.Get))
+
+                        {
+
+                            <th>
+
+                                @Html.TextBox("number", null, new
+                       {
+                           @placeholder = "ادخل الخانات" + " الخمسة المطلوبة " + " (xxxxx)",
+                           @id = "roll-input",
+                           @onkeydown = "return ValidateNumber(event);",
+                           @onkeypress = "return event.keyCode != 13;",
+                           @onpaste = "return false;",
+                           @ondrop = "return false;",
+                           @class = "form-control",
+                           @pattern = "\\d{5}",
+                           @required = "",
+                           @maxlength = "5",
+                           @minlength = "5",
+                           @onblur = "checkLength(this)"
+                       })
+                            </th>
+                            <th>
+                                @*<h4 style="color:#000000;"><span class="input-group-text" id="basic-addon1">SMS</span>  </h4>*@
+
+                                <button id="mod1" class="btn btn-default" type="submit">
+                                    <i class="fa fa-search "></i>
+                                </button>
+                            </th>
+                            <th>
+                                <h4 style="color:#000000;"><span class="input-group-text" id="basic-addon1">SMS</span>  </h4>
+
+                               @* <input id="mod1" class="btn btn-success" type="submit" value="بحث" style="padding-right:25px;color:white ;font-size:20px; float:right;" required="" aria-required="true" />*@
+                            </th>
+
+                        }
+                    </tr>
+
+                    @{
+
+                        if (ViewBag.number == null || ViewBag.number == "")
+                        {
+
+                            <tr>
+                                <td id="nullVal" style="color:#337ab7;"><h2>يرجي إدخال الخانات المطلوبة </h2></td>
+                            </tr>
+                        }
+
+                        else if (Model.Count() == 0 && ViewBag.number != null)
+                        {
+
+                            {
+                                var phone = new PhoneNumbers();
+
+                                string price = phone.GetPrice(ViewBag.number);
+                                ViewBag.price = price;
+
+                            }
+
+                            <tr>
+
+                                <td colspan="4">
+
+                                    <h4 style="color:green;font-size:25px"><p></p> الرقم @ViewBag.number مُتاح  <hr />   @ViewBag.price  </h4>
+                                </td>
+                            </tr>
+
+                        }
+
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+
+                                        <h4 style="color:red;font-size:25px">   الرقم @Html.DisplayFor(modelItem => item.PhoneNumber) مُخصص.</h4>
+                                </tr>
+                            }
+                        }
+                    }
+                </table>
+            </div>
+            @*<div class="col-md-4">
+            <div class="well">
+                <p>لأي استفسار نأمل التواصل على البريد الالكتروني التالي </p>
+                <a href="mailto: reg@cim.gov.ly"><h3>reg@cim.gov.ly</h3></a>
+            </div>
+        </div>*@
+             <div class="col-md-6">
+                <div class="well" style="padding-top:70px;">
+
+                    <a href="~/files/s.pdf" target="_blank"><h3>قائمة بأسعار الخدمة </h3></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="well" style="padding-top:90px;">
+                    @Html.ActionLink("تعبئة النمودج وطباعته", "ValueAddedServises", "Home", new { @style = "font-size:25px;" })
+                </div>
+            </div>
+        </div>
+
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary "style="float:left;">
+            <i class="fa fa-angle-double-left fa-2x"></i>
+        </a>
+        @*<button class="btn btn-default" type="submit" style="float:left">
+            <i class="fas fa-angle-double-left fa-3x"></i>
+         </button>*@
+
+        @*@Html.ActionLink("رجوع", "Index", "Home", new { @class = "btn btn-primary", @style = "padding-right:25px;color:white ;font-size:20px; float:left;" })*@
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btn").click(function () {
+            $("#myModal10").modal('show');
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        //$("#mod1").click(function () {
+        //    $("#myModal").modal('show');
+        //});
+
+    });
+    $("#roll-input").val("");
+</script>

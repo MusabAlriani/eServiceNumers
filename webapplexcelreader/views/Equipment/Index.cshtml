@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model WebApplExcelReader.Models.CascadingModel
+
+@using System.Web.Mvc;
+@using PagedList;
+@using PagedList.Mvc;
+
+<link href="~/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="~/Scripts/bootstrap.js"></script>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#txtSearch").autocomplete({
+            source: '@Url.Action("GetRecords", "Equipment")',
+            minLength: 1
+        });
+    });
+
+    $(function () {
+        if ($("#companyId option").length > 1) {
+            $("#companyId").removeAttr("disabled");
+        }
+        if ($("#deviceTypeId option").length > 1) {
+            $("#deviceTypeId").removeAttr("disabled");
+        }
+
+        if ($("#DeviceId option").length > 1) {
+            $("#DeviceId").removeAttr("disabled");
+        }
+        if ($("#ModelId option").length > 1) {
+            $("#ModelId").removeAttr("disabled");
+        }
+
+        if ($("#categoryId").val() != "" && $("#companyId").val() != "" && $("#deviceTypeId").val() != ""
+            && $("#DeviceId").val != "" && $("#ModelId").val != "") {
+            //var message = "Category: " + $("#categoryId option:selected").text();
+            //message += "\nCompany: " + $("#companyId option:selected").text();
+            //message += "\nDevice Type: " + $("#deviceTypeId option:selected").text();
+            //alert(message);
+        }
+    });
+</script>
+
+<div class="row">
+    <div class="col-md-12">
+    </div>
+    <br /><br />
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            @using (Html.BeginForm("Index", "Equipment", FormMethod.Post))
+            {
+
+                <thead class="table table-striped" style="direction:rtl">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>
+                            <div class="input-group">
+                                <div class="input-group-btn">
+
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                @Html.TextBox("searchTerm", null, new
+                           {
+                               @id = "txtSearch",
+                               @ondrop = "return false;",
+                               @class = "form-control",
+                               @required = "",
+                               @onblur = "checkLength(this)"
+                           })
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th></th>
+
+                        <th>
+                            @Html.DropDownListFor(m => m.ModelId, Model.Models, "Select Model", new { @class = "btn btn-default dropdown-toggle", @id = "ModelId", disabled = "disabled", onchange = "document.forms[0].submit();" })
+                        </th>
+                        <th>
+                            @Html.DropDownListFor(m => m.DeviceId, Model.Devicies, "Select Device", new { @class = "btn btn-default dropdown-toggle", @id = "DeviceId", onchange = "document.forms[0].submit();", disabled = "disabled" })
+                        </th>
+                        <th>
+                            @Html.DropDownListFor(m => m.deviceTypeId, Model.DeviceTypes, "Select Device Type", new { @class = "btn btn-default dropdown-toggle", @id = "deviceTypeId", onchange = "document.forms[0].submit();", disabled = "disabled" })
+                        </th>
+
+                        <th>
+
+                            @Html.DropDownListFor(m => m.companyId, Model.Companies, "Select Company", new { @class = "btn btn-default dropdown-toggle", @id = "companyId", onchange = "document.forms[0].submit();", disabled = "disabled" })
+                        </th>
+                        <th>
+
+                            @Html.DropDownListFor(m => m.categoryId, Model.Categories, "Select Category", new { @class = "btn btn-default dropdown-toggle", @id = "categoryId", onchange = " document.forms[0].submit();" })
+                        </th>
+                    </tr>
+                </thead>
+            }
+
+            <tbody style="color:black">
+                <tr style="background-color:#AED6F1 ;text-align:right">
+
+                    <th>Model Certificate</th>
+                    <th>Model Name</th>
+                    <th>Device Name</th>
+                    <th>Device Type Name</th>
+                    <th>Company Name</th>
+                    <th>Category Name</th>
+                </tr>
+            </tbody>
+            @{
+
+                foreach (var item in Model.dbViewModel)
+                {
+                    <tbody>
+                        <tr style="background-color:white;color:black ; direction:rtl">
+
+                            <td>@Html.DisplayFor(modelItem => item.CertivicateNumber)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ModelName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DeviceName) </td>
+                            <td>@Html.DisplayFor(modelItem => item.DeviceTypeName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CompanyName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
+                        </tr>
+                    </tbody>
+                }
+            }
+        </table>
+    </div>
+</div>

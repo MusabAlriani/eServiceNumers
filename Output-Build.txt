@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: WebApplExcelReader, Configuration: Release Any CPU ------
+1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3277: Found conflicts between different versions of the same dependent assembly that could not be resolved.  These reference conflicts are listed in the build log when log verbosity is set to detailed.
+1>  WebApplExcelReader -> C:\Users\eServices01\Desktop\Vidly\WebApplExcelReader\bin\WebApplExcelReader.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebApplExcelReader.Models.PhoneNumbers>
+@using WebApplExcelReader.Models;
+@{
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="accordion">
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-7">   أرقام الرسائل النصية القصيرة (SMS)</a>
+                    <div id="accordion-7" class="accordion-section-content">
+
+                        <p>
+                            هي أرقام تٌستخدم لإرسال رسائل نصية قصيرة لخدمات القيمة المضافة تُرسل من خلال الهاتف المحمول، وتتكون من 5 خانات.
+                        </p>
+
+                        @Html.ActionLink("استعلام عن الرقم", "First", "Home", new
+                   {
+                       @class = "btn btn-info",
+
+                   })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="col-md-12">
+
+            <div class="accordion">
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-8">  الأرقام القصيرة المجانية (14xx) </a>
+                    <div id="accordion-8" class="accordion-section-content">
+                        <p>
+                            هي أرقام قصيرة سهلة الحِفظ، يتم اختيارها للنفاذ إلى خدمات مختلفة تمس كافة شرائح المجتمع، وفيها الطرف المُتصل به هو من يتحمّل رسوم المكالمة. وتستخدم من خلال شبكات الهاتف الثابت والمحمول، وتتكون من 4 خانات بادئُها 14.                        </p>
+
+                        @Html.ActionLink("استعلام عن الرقم", "Numbers14", "Home", new
+                   {
+                       @class = "btn btn-info",
+
+                   })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="col-md-12">
+
+            <div class="accordion">
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-57">    الأرقام القصيرة غير مجانية (15xx) </a>
+                    <div id="accordion-57" class="accordion-section-content">
+                        <p>
+                            هي أرقام قصيرة سهلة الحِفظ، يتم اختيارها للنفاذ إلى خدمات مختلفة تمس كافة شرائح المجتمع، وفيها الطرف المُتصل هو من يتحمّل رسوم المكالمة. وتستخدم من خلال شبكات الهاتف الثابت والمحمول، وتتكون من 4 خانات بادئُها 15.                        </p>
+
+                        @Html.ActionLink("استعلام عن الرقم", "Numbers15", "Home", new
+                   {
+                       @class = "btn btn-info",
+
+                   })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="col-md-12">
+
+            <div class="accordion">
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-47" style="text-align:right;direction:ltr;">(0800-xxx xxx)  الأرقام المجانية</a>
+                    <div id="accordion-47" class="accordion-section-content">
+                        <p>
+                            هي أرقام خدمات تُفرض فيها رسوم المكالمة على الطرف المُتصل به، وتستخدم من خلال شبكات الهاتف الثابت والمحمول، وتتكون من عشر خانات.
+                        </p>
+                        @Html.ActionLink("استعلام عن الرقم", "Number0800", "Home", new
+                   {
+                       @class = "btn btn-info",
+
+                   })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="col-md-12">
+
+            <div class="accordion">
+                <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-37" style="text-align:right;direction:ltr;">(0900-yxx xxx)  الأرقام المميزة</a>
+                    <div id="accordion-37" class="accordion-section-content">
+                        <p>
+                            هي أرقام خدمات تُفرض فيها رسوم المكالمة على الطرف المُتصل، وتستخدم من خلال شبكات الهاتف الثابت والمحمول، وتتكون من عشر خانات.
+                        </p>
+                        <p>
+                            <a href="~/files/1.pdf" target="_blank" class="btn btn-danger" style="float:right;"> أسعار مؤشر التعرفة </a>
+                        </p>
+
+                        @Html.ActionLink("استعلام عن الرقم", "Number0900", "Home",
+               new
+               {
+                   @class = "btn btn-info",
+
+               })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+@*<div class="navbar navbar-default navbar-fixed-bottom">
+        <p id="copy"> &copy; 2017    | الخدمات الإلكترونية   </p>
+    </div>*@
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/js/accordion.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="~/js/bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+
+<script src="~/js/metisMenu.min.js"></script>
+<!-- Custom Theme JavaScript -->
+
+<script src="~/js/sb-admin-2.js"></script>
+<script src="~/js/accordion.js"></script>

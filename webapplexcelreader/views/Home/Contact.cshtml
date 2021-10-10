@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/JavaScript.js"></script>
+
+<!-- fontawesome -->
+<link href="~/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+                <h4>العنوان</h4>
+                <p>
+                    الهيئة العامة للاتصالات والمعلوماتية
+                    ليبيا ـ طرابلس ـ شارع الزاوية
+                </p>
+            </div>
+            <div class="col-md-6">
+                <!----------------------------------------------------------------->
+
+                <div class="well">
+                    <h4>رقم الهاتف</h4>
+                    <p>00218213619011/15</p>
+                </div>
+                @*<div class="well">
+                         <p>لاي استفسار نأمل التواصل على البريد الالكتروني التالي </p>
+                    <a href="mailto: reg@cim.gov.ly"><p>reg@cim.gov.ly</p></a>
+                         </div>*@
+
+                <div class="well" style="padding-top:85px;">
+                    <p>لأي استفسار حول الصفحة نأمل التواصل على البريد الالكتروني التالي </p>
+                    <a href="mailto: support@eservices.ly"><p> support@eservices.ly</p></a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="well">
+                    <h4>الفاكس</h4>
+                    <p>00218213615492</p>
+                </div>
+                <div class="well">
+                    <h4>تواصل معنا</h4>
+                    @*<address>
+                        <strong><a href="http://cim.gov.ly/index.htm" target="_blank">الهيئة العامة للاتصالات و المعلوماتية</a></strong>
+                    </address>*@
+                    @*@Html.ActionLink("تعبئة النمودج وطباعته", "Services15", "Home", new { @style = "font-size:25px;" })*@
+
+                    <a href="https://www.facebook.com/cim.gov.ly" target="_blank"><i class="fa fa-facebook-square fa-3x" style="color:#3B5998"></i></a>
+                    <a href="https://twitter.com/Telecom_Libya" target="_blank"><i class="fa fa-twitter fa-3x" style="color:#55acee"></i></a>
+                    <a href="http://www.cim.gov.ly/" target="_blank"><i class="fa fa-wikipedia-w fa-2x" style="color:#55acee"></i></a>
+
+                    @*<img src="~/images/cim.png" style="width:40px;" /></a>*@
+                </div>
+
+                <!------------------------------------------------------------------------------------------------------------------>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvfvAHd4lUBy7iQ9XfuqySejZCSD7qs9E&language=ar&region=EG&callback=initMap">
+            </script>
+
+            <div id="map"></div>
+            <script>
+
+                function initMap() {
+                    var cairo = { lat: 32.8733669, lng: 13.1903085 };
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        scaleControl: true,
+                        center: cairo,
+                        zoom: 17
+                    });
+
+                    var infowindow = new google.maps.InfoWindow;
+                    infowindow.setContent('<b>الهيئة العامة للاتصلات و المعلوماتية</b>');
+
+                    var marker = new google.maps.Marker({ map: map, position: cairo });
+                    marker.addListener('click', function () {
+                        infowindow.open(map, marker);
+                    });
+                }
+            </script>
+        </div>
+        @*<div class="col-md-12">
+                <strong><a href="~/files/3.png" target="_blank">موقع الهيئة العامة للاتصلات و المعلوماتية</a></strong>
+            </div>*@
+    </div>
+</div>

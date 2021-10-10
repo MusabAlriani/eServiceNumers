@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/fontawesome")
+        @Styles.Render("~/Content/jqueryui")*@
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113326043-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113326043-1');
+    </script>
+    <style>
+        div ul li:hover {
+            background-color: snow;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        @*<a class=" navbar-brand" href="#" style="float:left">نسخة تجربية</a>*@
+
+        <div class="navbar-collapse collapse" style="background-color:#e7e7e7;">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("الرئيسية", "MainPage", "Home", "Equipment", new { @style = "color: rgba(0, 0, 0, 1)" })</li>
+
+                <li>@Html.ActionLink("اتصل بنا", "Contact", "Home", "Equipment", new { @style = "color: rgba(0, 0, 0, 1)" }) </li>
+           </ul>
+        </div>
+    </div>
+    <div>
+
+        <div class="container">
+
+            <a href="~/Home/MainPage">
+                <img class="img-rounded img-responsive" src="~/files/logo.jpg" id="logoPage1" style=" text-align:center;">
+            </a>
+        </div>
+        <hr />
+        @RenderBody()
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="navbar navbar-default navbar-fixed-bottom" style="background-color:  #e7e7e7">
+        <p id="copy" style="color:rgba(0, 0, 0, 1);background-color:#e7e7e7;direction: rtl">الإدارة العامة للخدمات الإلكترونية @DateTime.Now.Year &copy;   </p>
+    </div>
+    <script src="~/JavaScript.js"></script>
+    <script src="~/Scripts/accordion.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @Scripts.Render("~/bundles/jqueryui")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
